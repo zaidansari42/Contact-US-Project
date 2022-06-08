@@ -3,18 +3,22 @@
 * {
   margin: 0;
   padding: 0;
+
   box-sizing: border-box;
+
   font-family: "Poppins", sans-serif;
 }
 
 section {
   position: relative;
+
+  display: flex;
   justify-content: center;
   align-items: center;
+
+  background: #112d42;
   border: 5px solid;
   min-height: 100vh;
-  background: #112d42;
-  display: flex;
 }
 
 section::before {
@@ -109,7 +113,6 @@ section .container .contactinfo .sci li {
 }
 
 section .container .contactinfo .sci li a img {
-  /* max-width: 50px; */
   max-height: 45px;
   filter: invert(1);
   opacity: 0.5;
@@ -222,7 +225,7 @@ section .container .contact-form .formbox .inputbox input[type="submit"] {
   padding: 12px;
 }
 
-section .container .contact-form .formbox .inputbox input[type="submit"]:hover {
+section .container .contact-form .formbox input[type="submit"]:hover {
   background: firebrick;
 }
 
