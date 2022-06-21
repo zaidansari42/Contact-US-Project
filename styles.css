@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #112d42;
+  border: 5px solid;
+  min-height: 100vh;
+}
+
+section::before {
+  content: "";
+  background: #03a9f4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+}
+
+section .container {
+  position: relative;
+  min-width: 1100px;
+  min-height: 550px;
+  display: flex;
+  z-index: 5;
+}
+
+section .container .contactinfo {
+  /* border: 1px solid; */
+  position: absolute;
+  top: 40px;
+  width: 450px;
+  height: calc(100% - 80px);
+  background: #0f3959;
+  z-index: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5);
+}
+
+.container .contactinfo h2 {
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.container .contactinfo .info {
+  position: relative;
+  margin: 20px 0;
+}
+
+.container .contactinfo .info li {
+  position: relative;
+  margin: 20px 0;
+  display: flex;
+  cursor: pointer;
+  align-items: flex-start;
+}
+
+.container .contactinfo .info li span:nth-child(1) {
+  width: 30px;
+  min-width: 30px;
+}
+
+.container .contactinfo .info li span:nth-child(1) img {
+  width: 100%;
+  /* This invert feature makes the image of inverse color, that is white. */
+  filter: invert(1);
+  opacity: 0.6;
+}
+
+.container .contactinfo .info li span:nth-child(2) {
+  margin-left: 10px;
+  font-weight: 300px;
+  opacity: 0.5;
+  color: #fff;
+}
+
+.container .contactinfo .info li:hover span:nth-child(1) img,
+.container .contactinfo .info li:hover span:nth-child(2) {
+  opacity: 1;
+}
+
+section .container .contactinfo .sci ul {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 5px;
+  /* filter: invert(1); 
+  /* border: 1px solid; */
+  height: 45px;
+}
+
+section .container .contactinfo .sci li {
+  list-style: none;
+  margin: 0 15px;
+}
+
+section .container .contactinfo .sci li a img {
+  max-height: 45px;
+  filter: invert(1);
+  opacity: 0.5;
+}
+
+section .container .contactinfo .sci li:hover a img {
+  opacity: 1;
+}
+
+section .container .contact-form {
+  position: absolute;
+  padding: 70px 50px;
+  background: #fff;
+  width: calc(100% - 250px);
+  margin-left: 150px;
+  padding-left: 350px;
+  height: 100%;
+  box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+section .container .contact-form h2 {
+  color: #0f3959;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+section .container .contact-form .formbox {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+section .container .contact-form .formbox .inputbox {
+  position: relative;
+  padding: 0 0 35px 0;
+}
+
+section .container .contact-form .formbox .inputbox.w50 {
+  width: 47%;
+}
+
+section .container .contact-form .formbox .inputbox.w100 {
+  width: 100%;
+}
+
+section .container .contact-form .formbox .inputbox input,
+section .container .contact-form .formbox .inputbox textarea {
+  width: 100% !important;
+  color: #333;
+  padding: 5px;
+
+  font-size: 18px;
+  /* This will remove the existing borders */
+  border: none;
+  /* This will create only bottom border like underline effect */
+  border-bottom: 1px solid #777;
+  font-weight: 300px;
+  /* This is used so no line is visible when selecting the input */
+  outline: none;
+  /* this will not allow to resize the text area */
+  resize: none;
+}
+
+section .container .contact-form .formbox .inputbox textarea {
+  min-height: 120px;
+}
+
+section .container .contact-form .formbox .inputbox span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: 300px;
+  color: #333;
+  transition: 0.5s;
+  /* the span name wasn't clickable, after this it became normal */
+  pointer-events: none;
+}
+
+/* :focus makes the element move on clicking, 
+the translateY(20px); makes it goes in the X direction by 20px on clicking
+:valid makes the focus not retract when the text is written, or else it used
+to overlap the written text after defocusing.
+*/
+section .container .contact-form .formbox .inputbox input:focus ~ span,
+section .container .contact-form .formbox .inputbox textarea:focus ~ span {
+  transform: translateY(-22px);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: firebrick;
+}
+section .container .contact-form .formbox .inputbox input:valid ~ span,
+section .container .contact-form .formbox .inputbox textarea:valid ~ span {
+  transform: translateY(-22px);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: firebrick;
+}
+
+section .container .contact-form .formbox .inputbox input[type="submit"] {
+  position: relative;
+  cursor: pointer;
+  background: #0f3f59;
+  color: #fff;
+  border: none;
+  max-width: 150px;
+  padding: 12px;
+}
+
+section .container .contact-form .formbox input[type="submit"]:hover {
+  background: firebrick;
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    /* color: red; */
+  }
+
+  section .container {
+    min-width: 95%;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  body {
+    color: green;
+  }
+  section .container .contact-form {
+    padding: 70px 10px;
+    width: 100%;
+    margin-left: 0;
+    padding-left: 42%;
+  }
+  section .container .contactinfo {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    color: purple;
+    font-size: 0.9em;
+  }
+  section::before {
+    display: none;
+  }
+  section .container {
+    width: 100vw;
+  }
+  section .container .contactinfo .sci ul {
+    flex-wrap: wrap;
+    margin: 10px 20px;
+  }
+  section .container .contact-form {
+    box-shadow: 0;
+  }
+  section .container .contactinfo .sci ul {
+    top: 0px;
+    height: 100%;
+    box-shadow: 0;
+  }
+  section .container .contactinfo {
+    height: 100%;
+    top: 0;
+    box-shadow: 0 0 0;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  body {
+    color: gold;
+  }
+  section .container .contactinfo {
+    position: static;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
+  section .container .contact-form {
+    position: static;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    box-shadow: 0 0 0;
+    padding: 10px;
+  }
+
+  section .container .contact-form .formbox {
+    flex-direction: column;
+  }
+
+  section .container .contact-form .formbox .inputbox.w50 {
+    width: 100%;
+  }
+
+  section .container {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+  }
+  section .container .contact-form h2 {
+    margin-left: 20px;
+  }
+}
